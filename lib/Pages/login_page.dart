@@ -3,16 +3,11 @@ import 'package:flutter/material.dart';
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Material(
-      child: Center(
-        child: Text(
-          "Login Page",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    );
+    return Material(
+        child: Column(
+      children: [
+        Center(child: Image.asset("assets/images/login_image.png")),
+      ],
+    ));
   }
 }
