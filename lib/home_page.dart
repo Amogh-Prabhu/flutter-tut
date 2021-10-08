@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
   final String string = "World";
   @override
   Widget build(BuildContext context) {
