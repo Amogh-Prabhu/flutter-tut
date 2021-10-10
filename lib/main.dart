@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:test_s/Util/routes.dart';
 
-import 'Pages/home_page.dart';
-import 'Pages/login_page.dart';
+import 'utils/routes.dart';
+import 'pages/home_page.dart';
+import 'pages/login_page.dart';
 
 void main() {
   runApp(MyApp());

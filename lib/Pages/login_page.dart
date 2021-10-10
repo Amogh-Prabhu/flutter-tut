@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:test_s/Util/routes.dart';
+
+import '../utils/routes.dart';
 
 class LoginPage extends StatefulWidget {
   @override
