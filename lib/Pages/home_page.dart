@@ -5,26 +5,13 @@ import 'package:flutter/material.dart';
 import '../widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
-  final String string = "World";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Catalog App")),
+      appBar: AppBar(title: Text("Catalog App")),
       body: Container(
+        color: Theme.of(context).backgroundColor,
         width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Hello World",
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
       ),
       drawer: MyDrawer(),
     );
