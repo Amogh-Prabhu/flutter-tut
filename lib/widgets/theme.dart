@@ -3,18 +3,13 @@
 import 'package:flutter/material.dart';
 
 class MyTheme {
-  static ThemeData get themeData {
+  static ThemeData themeData(BuildContext context) {
     return ThemeData(
       primarySwatch: Colors.deepPurple,
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.black),
-        titleTextStyle: TextStyle(
-          color: Colors.black,
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-        ),
       ),
       backgroundColor: Colors.white,
     );

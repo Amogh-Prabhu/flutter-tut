@@ -1,6 +1,4 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'utils/routes.dart';
@@ -18,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.light,
       darkTheme: ThemeData(brightness: Brightness.dark),
-      theme: MyTheme.themeData,
+      theme: MyTheme.themeData(context),
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.homeRoute,
       routes: {
