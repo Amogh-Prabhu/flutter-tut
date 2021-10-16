@@ -1,5 +1,19 @@
+class CatalogModel {
+  static final items = [
+    Items(
+      id: 1,
+      name: "iPhone 12 Pro",
+      desc: "Apple iPhone 12th generation",
+      price: 999,
+      color: "#33505a",
+      image:
+          "https://www.reliancedigital.in/medias/Apple-12-Pro-Max-Smartphones-491901573-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMjU2NDd8aW1hZ2UvanBlZ3xpbWFnZXMvaDRhL2gzMy85NDA3ODQ0MDI0MzUwLmpwZ3w1OWRmNWM5ZmQwZThlNmI0YmVhZjJhNWMwOGE1NzYyMzliZmQzNDBjNGY4Y2E0N2M0YTg0OWExMGM5ZWMyOWQ3",
+    ),
+  ];
+}
+
 class Items {
-  final String id;
+  final int id;
   final String name;
   final String desc;
   final num price;
@@ -14,14 +28,3 @@ class Items {
       required this.color,
       required this.image});
 }
-
-final product = [
-  Items(
-    id: "I001",
-    name: "iPhone 12 Pro",
-    desc: "Apple iPhone 12th generation",
-    price: 999,
-    color: "#33505a",
-    image: "https://m.media-amazon.com/images/I/71YlH-4MUQL._SL1500_.jpg",
-  ),
-];
