@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
 
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -39,9 +41,59 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Theme.of(context).backgroundColor,
       ),
       body: (CatalogModel.items.isNotEmpty)
-          ? ListView.builder(
+          ? GridView.builder(
+              gridDelegate:
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
               itemBuilder: (context, index) {
-                return ItemWidget(item: CatalogModel.items[index]);
+                return Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  clipBehavior: Clip.antiAlias,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Container(
+                        height: 30,
+                        decoration: BoxDecoration(
+                          color: Colors.deepPurple,
+                        ),
+                        child: Center(
+                          child: Text(
+                            CatalogModel.items[index].name,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        height: 120,
+                        child: Image.network(
+                          CatalogModel.items[index].image,
+                          fit: BoxFit.fitHeight,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Container(
+                        height: 27.71,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                        ),
+                        child: Center(
+                          child: Text(
+                            "\$${CatalogModel.items[index].price}",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
               },
               itemCount: CatalogModel.items.length,
             )
