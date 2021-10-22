@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
 
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -50,12 +48,12 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.circular(10)),
                   clipBehavior: Clip.antiAlias,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         height: 30,
                         decoration: BoxDecoration(
-                          color: Colors.deepPurple,
+                          color: Theme.of(context).primaryColorDark,
                         ),
                         child: Center(
                           child: Text(
@@ -66,9 +64,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
                       Container(
                         height: 120,
                         child: Image.network(
@@ -78,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(height: 10),
                       Container(
-                        height: 27.71,
+                        height: 25,
                         decoration: BoxDecoration(
                           color: Colors.black,
                         ),
