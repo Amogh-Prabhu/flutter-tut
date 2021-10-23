@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         MyRoutes.loginRoute: (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.homeDetailsRoute: (context) => Container(),
       },
     );
   }
