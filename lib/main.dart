@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 import 'package:flutter/material.dart';
 
-import 'utils/routes.dart';
-import 'pages/home_page.dart';
-import 'pages/login_page.dart';
+import './utils/routes.dart';
+import './pages/home_page.dart';
+import './pages/login_page.dart';
 import './widgets/theme.dart';
 
 void main() {
@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
       routes: {
         MyRoutes.loginRoute: (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
-        MyRoutes.homeDetailsRoute: (context) => Container(),
       },
     );
   }

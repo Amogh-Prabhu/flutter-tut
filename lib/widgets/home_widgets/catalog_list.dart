@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:test_s/pages/home_detail_page.dart';
 
 import '../../models/products.dart';
 import 'package:test_s/widgets/theme.dart';
@@ -31,30 +32,40 @@ class CatalogItem extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 10),
-      padding: EdgeInsets.all(12),
-      height: 150,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
+    return InkWell(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return HomeDetailPage(catalogItem: catalogItem);
+          },
+        ),
       ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            flex: 1,
-            child: CatalogItemImage(catalogImage: catalogItem.image),
-          ),
-          Expanded(
-            flex: 2,
-            child: CatalogItemInfo(
-              itemName: catalogItem.name,
-              itemDesc: catalogItem.desc,
-              itemPrice: catalogItem.price,
+      child: Container(
+        margin: EdgeInsets.only(bottom: 10),
+        padding: EdgeInsets.all(12),
+        height: 150,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              flex: 1,
+              child: CatalogItemImage(catalogImage: catalogItem.image),
             ),
-          )
-        ],
+            Expanded(
+              flex: 2,
+              child: CatalogItemInfo(
+                itemName: catalogItem.name,
+                itemDesc: catalogItem.desc,
+                itemPrice: catalogItem.price,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
