@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../models/products.dart';
-import '../widgets/drawer.dart';
 import '../widgets/theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -82,12 +81,18 @@ class CatalogHeader extends StatelessWidget {
 class CatalogList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return CatalogItem(catalogItem: CatalogModel.items[index]);
-      },
-      itemCount: CatalogModel.items.length,
-    );
+    if (CatalogModel.items == null || CatalogModel.items.isEmpty) {
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    } else {
+      return ListView.builder(
+        itemBuilder: (context, index) {
+          return CatalogItem(catalogItem: CatalogModel.items[index]);
+        },
+        itemCount: CatalogModel.items.length,
+      );
+    }
   }
 }
 
